@@ -34,3 +34,33 @@ body{
     align-items: center;
     word-break: break-all;
 }
+
+.password:hover{
+    border: 2px solid teal ;   
+}
+
+#btn1{
+    background-color: red;
+    border: 2px solid white;
+    color: white;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+
+#btn1:hover{
+    background-color: rgba(255, 0, 0, 0.6);;
+}
+
+#btn2{
+    background-color: gray;
+    border: 2px solid white;
+    color: white;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+
+#btn2:hover{
+    background-color: rgba(212, 186, 186);;
+}
