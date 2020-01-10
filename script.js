@@ -48,8 +48,8 @@ function list(low, high){
 function passGen(){
     const passLength = prompt("Password Length ?")
     const pass = generatePass(passLength);
-    passwordDisplay.innerText = pass;
-    return false;
+    document.getElementById("passwordDisplay").value = pass;
+    return true;
 }
 
 function generatePass(passLength){
@@ -59,4 +59,17 @@ function generatePass(passLength){
         passChar.push(String.fromCharCode(character));
     }
     return passChar.join('');
+}
+
+function btnCopy(){
+    var change = document.getElementById("btn2");
+    if (change.innerHTML == "Copy to Clipboard"){   
+        change.innerHTML = "Copied !";
+        document.getElementById("passwordDisplay").select();
+        document.execCommand("Copy");
+        //alert("Copied to clipboard.");
+    }
+    else{
+        change.innerHTML = "Copy to Clipboard";
+    }
 }

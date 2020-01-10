@@ -6,9 +6,17 @@ body{
     text-align: center;
     margin: 0px;
     font-size: 30px;
+    padding: 30px;
 }
 
-.container{
+.heading{
+    text-align: center;
+    margin: 0px;
+    font-size: 30px;
+    padding: 10px;
+}
+
+.box{
     background-color: white;
     padding: 3rem;
     border-radius: 1mm;
