@@ -47,8 +47,13 @@ function list(low, high){
 
 function passGen(){
     const passLength = prompt("Password Length ?")
+    if (passLength>=8 && passLength<=128){
     const pass = generatePass(passLength);
     document.getElementById("passwordDisplay").value = pass;
+    }else{
+        alert("Enter a password of length between 8 and 128.")
+        return false;
+    }
     return true;
 }
 
