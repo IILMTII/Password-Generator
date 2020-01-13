@@ -16,28 +16,30 @@ function passGen(){
     if (passLength>=8 && passLength<=128){
         const spec = confirm ("Do you want special characters ?");
         const num = confirm ("Do you want numbers ?");
+        const lower = confirm ("Do you want lowercase characters ?");
         const upper = confirm ("Do you want uppercase characters ?");
-        const pass = generatePass(passLength, spec, num, upper);
+        const pass = generatePass(passLength, spec, num, lower, upper);
         document.getElementById("passwordDisplay").value = pass;
     }else{
         alert("Passwords must be between 8 and 128 characters in length.");
     }
 }
 
-function generatePass(passLength, spec, num, upper){
+function generatePass(passLength, spec, num, lower, upper){
     const passChar=[];
-    let charList = lowerSet;
+    let charList=[];
+    if (lower) charList = charList.concat(lowerSet);
     if (upper) charList = charList.concat(upperSet);
-
     if (num) charList = charList.concat(numSet);
-
     if (spec) charList = charList.concat(specSet);
-
+    if (lower||upper||num||spec){
         for( let i=0; i<passLength; i++){
             const character=charList[Math.floor(Math.random()*charList.length)];
             passChar.push(String.fromCharCode(character));
         }
         return passChar.join('');
+    }
+    return "No symbol/character/number selected !";
 }
 
 function btnCopy(){
